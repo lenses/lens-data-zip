@@ -189,7 +189,7 @@ A transform component that zips two arrays of objects together based on a common
           //var intersect = _.intersection(_.pluck(self.input, self.zipColKey1), _.pluck(self.input, self.zipColKey1));
           //console.log(intersect);
           
-          console.log('key',self.zipColKey0);
+          // console.log('key',self.zipColKey0);
 
           var input0 = _.map(self.input, function(item) {
             item['__toZip'] = item[self.zipColKey0];
@@ -203,7 +203,7 @@ A transform component that zips two arrays of objects together based on a common
           
           var grouped = _.groupBy(input0.concat(input1), '__toZip');
 
-          console.log(grouped);
+          // console.log(grouped);
 /*
           grouped.map(grouped, function(item) {
             var key = Object.keys(item)[0];
@@ -221,7 +221,7 @@ A transform component that zips two arrays of objects together based on a common
 */
           self.output = [];
           
-          console.log(self.joinType);
+          // console.log(self.joinType);
 
           _.forIn(grouped, function(value, key) {
             var ret = {};
@@ -234,17 +234,17 @@ A transform component that zips two arrays of objects together based on a common
                 _.assign(ret, value[0], value[1]);
 
                 delete ret['__toZip'];
-                console.log('remove dupes', self.removeDuplicates);
+                // console.log('remove dupes', self.removeDuplicates);
                 if(self.removeDuplicates && self.zipColKey0!==self.zipColKey1 && ret[self.zipColKey0]) {
                   delete ret[self.zipColKey1];
                 }
-                console.log(ret);
+                // console.log(ret);
                 self.output.push(ret);
               }
             }
 
           });
-          console.log(self.output);
+          // console.log(self.output);
           
         }
       }

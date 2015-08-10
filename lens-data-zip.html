@@ -1,7 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-selector/iron-selector.html">
 <!-- <link rel="import" href="../core-input/core-input.html">
- --><link rel="import" href="../paper-icon-button/paper-icon-button.html">
 
 <!--
 A transform component that zips two arrays of objects together based on a common key.
@@ -66,13 +65,8 @@ A transform component that zips two arrays of objects together based on a common
       output: { notify: true },
       removeDuplicates: {
         type: Boolean,
-        value: false,
+        value: true,
         observer: '_calculateOutput'
-      },
-      smart: {
-        type: Boolean,
-        value: false,
-        notify: true
       },
       zipColKey0: {
         value: null,
@@ -194,6 +188,7 @@ A transform component that zips two arrays of objects together based on a common
             }
           }
         });  // console.log(self.output);
+        self.fire('lens-output-changed', self.output);
       }
     }
   });

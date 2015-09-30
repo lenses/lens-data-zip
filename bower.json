@@ -8,11 +8,9 @@
   ],
   "main": "lens-data-zip.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#~0.5.5",
-    "lodash": "~3.5.0",
-    "core-collapse": "Polymer/core-collapse#~0.5.5",
-    "core-selector": "Polymer/core-selector#~0.5.5",
-    "core-icon-button": "Polymer/core-icon-button#~0.5.5"
+    "polymer": "Polymer/polymer#^1.0.0",
+    "lodash": "~3.7.0",
+    "iron-selector": "PolymerElements/iron-selector#^1.0.0"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^2.2.6"
